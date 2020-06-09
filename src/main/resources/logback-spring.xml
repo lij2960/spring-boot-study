@@ -7,10 +7,10 @@
         <property name="log.path" value="/Users/jackey/logs" />
     </springProfile>
     <springProfile name="test">
-        <property name="log.path" value="usr/local/log" />
+        <property name="log.path" value="/usr/local/log" />
     </springProfile>
     <springProfile name="prod">
-        <property name="log.path" value="usr/local/log" />
+        <property name="log.path" value="/usr/local/log" />
     </springProfile>
 
     <property name="log.pattern" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{20} - [%method,%line] - %msg%n" />
