@@ -25,11 +25,11 @@ public class HelloController {
         return "hello spring boot";
     }
 
-    @RequestMapping("/")
-    public String toDemo(ModelMap map) {
-        map.addAttribute("host", "https://gopher.cc");
-        return "demo";
-    }
+//    @RequestMapping("/")
+//    public String toDemo(ModelMap map) {
+//        map.addAttribute("host", "https://gopher.cc");
+//        return "demo";
+//    }
 
     @RequestMapping("/user")
     public String toUser(ModelMap map) {
