@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Themeleaf 介绍</title>
+</head>
+<body>
+<span th:text="${hello}"></span>
+<!--#{weclome}读取messages.properties中相应的属性-->
+<h2 th:text="#{welcome}"></h2>
+<span >th:href标签的使用</span>
+<!--该链接的地址就会是 localhost:8080/thymeleaf/testHref-->
+<a th:href="@{/thymeleaf/testHref}">这是一个链接</a>
+<div th:if="${age} gt 5">
+    条件成立，执行该div
+</div>
+
+<span>格式化輸出（內置方法）</span><br/>
+字符串长度：<input type="text" th:value="${#strings.length(name)}"/>
+
+<ol>
+    <li>
+        List循环
+        <table>
+            <tr>
+                <th>用户名</th>
+                <th>密碼</th>
+                <th>地址</th>
+                <th>年齡</th>
+            </tr>
+            <tr th:each="person : ${personList}">
+                <td th:text="${person.name}"></td>
+                <td th:text="${person.password}"></td>
+                <td th:text="${person.address}"></td>
+                <td th:text="${person.age}"></td>
+            </tr>
+        </table>
+    </li>
+</ol>
+
+<div th:insert="foot :: bottom"></div>
+</body>
+</html>
