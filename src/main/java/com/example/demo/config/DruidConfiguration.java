@@ -27,13 +27,13 @@ public class DruidConfiguration {
         return servletRegistrationBean;
     }
 
-    @Bean
-    public FilterRegistrationBean filterRegistrationBean() {
-        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
-        filterRegistrationBean.setFilter(new WebStatFilter());
-        filterRegistrationBean.addUrlPatterns("/*");
-        // 忽略资源
-        filterRegistrationBean.addInitParameter("exclusions", "*.js, *.gif, *.jpg, *.bmp, *.png, *.css, *.ico, /druid/*");
-        return filterRegistrationBean;
-    }
+//    @Bean
+//    public FilterRegistrationBean filterRegistrationBean() {
+//        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+//        filterRegistrationBean.setFilter(new WebStatFilter());
+//        filterRegistrationBean.addUrlPatterns("/*");
+//        // 忽略资源
+//        filterRegistrationBean.addInitParameter("exclusions", "*.js, *.gif, *.jpg, *.bmp, *.png, *.css, *.ico, /druid/*");
+//        return filterRegistrationBean;
+//    }
 }
