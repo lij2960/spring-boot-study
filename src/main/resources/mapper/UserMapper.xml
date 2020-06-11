@@ -8,10 +8,34 @@
         <id     property="id"               column="id"      />
         <result property="userName"         column="user_name"      />
         <result property="age"              column="age"   />
+        <result property="address"          column="address"   />
         <result property="mobilePhone"      column="mobile_phone"    />
     </resultMap>
 
     <select id="queryAll" resultMap="UserResult">
         select id,user_name,age,address,mobile_phone from user
     </select>
+
+    <select id="find" resultMap="UserResult">
+        select * from user where id = #{id}
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="User">
+        insert into user (user_name, age, address, mobile_phone) values (#{userName}, #{age}, #{address}, #{mobilePhone})
+    </insert>
+
+    <update id="update" parameterType="User">
+        update user
+        set
+            <if test="address != null">address=#{address},</if>
+            <if test="age != null">age=#{age},</if>
+            <if test="mobilePhone != null">mobile_phone=#{mobilePhone},</if>
+            <if test="userName != null">user_name=#{userName},</if>
+            id=#{id}
+        where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="User">
+        delete from user where id = #{id}
+    </delete>
 </mapper>

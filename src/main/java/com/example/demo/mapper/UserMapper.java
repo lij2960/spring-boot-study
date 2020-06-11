@@ -7,5 +7,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 public interface UserMapper {
-    public List<User> queryAll();
+    List<User> queryAll();
+    User find(int userId);
+    int insert(User user);
+    int update(User user);
+    int delete(int userId);
 }

@@ -26,4 +26,37 @@ public class UserController {
         List<User> userList = userService.queryAll();
         return userList;
     }
+
+    @GetMapping("/user")
+    @ResponseBody
+    public User Find() {
+        User user = userService.find(5);
+        return user;
+    }
+
+    @GetMapping("/insert")
+    @ResponseBody
+    public int Insert() {
+        User user = new User();
+        user.setAddress("gopher.cc");
+        user.setAge(3);
+        user.setMobilePhone("18955220533");
+        user.setUserName("gopher.cc");
+        return userService.insert(user);
+    }
+
+    @GetMapping("/update")
+    @ResponseBody
+    public int Update() {
+        User user = new User();
+        user.setAddress("gopher.cc update");
+        user.setId(5);
+        return userService.update(user);
+    }
+
+    @GetMapping("/delete")
+    @ResponseBody
+    public int Delete() {
+        return userService.delete(5);
+    }
 }

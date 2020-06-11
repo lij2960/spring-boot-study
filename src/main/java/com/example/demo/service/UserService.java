@@ -9,5 +9,9 @@ public interface UserService {
      * 查询用户信息列表
      * @return
      */
-    public List<User> queryAll();
+    List<User> queryAll();
+    User find(int userId);
+    int insert(User user);
+    int update(User user);
+    int delete(int userId);
 }
