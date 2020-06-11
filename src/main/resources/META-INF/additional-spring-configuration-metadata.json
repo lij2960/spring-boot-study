@@ -4,5 +4,10 @@
       "name": "wyait.title",
       "type": "java.lang.String",
       "description": "Description for wyait.title."
-  }
-] }
+    },
+    {
+      "name": "spring.http.redis.database",
+      "type": "java.lang.String",
+      "description": "Description for spring.http.redis.database."
+    }
+  ] }
