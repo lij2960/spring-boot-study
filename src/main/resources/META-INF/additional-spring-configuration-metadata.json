@@ -9,5 +9,10 @@
       "name": "spring.http.redis.database",
       "type": "java.lang.String",
       "description": "Description for spring.http.redis.database."
+    },
+    {
+      "name": "spring.datasource.druid.initial-size",
+      "type": "java.lang.String",
+      "description": "Description for spring.datasource.druid.initial-size."
     }
   ] }
