@@ -1,18 +1,19 @@
 package com.example.demo.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
+import com.example.demo.mapper.UserMapper;
+import com.example.demo.bean.User;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    @Resource
+    private UserMapper userMapper;
 
-    // 添加用户
     @Override
-    public int create(int age, String name) {
-        String sql = "insert into user(NAME, AGE) values (?, ?)";
-        return this.jdbcTemplate.update(sql, name, age);
+    public List<User> queryAll() {
+        return userMapper.queryAll();
     }
 }

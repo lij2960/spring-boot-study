@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.filter.TestFilter;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -10,11 +11,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@Configuration
+//@Configuration
 @SpringBootApplication
 //@EnableScheduling
-@EnableAsync
-@ServletComponentScan
+//@EnableAsync
+//@ServletComponentScan
+@MapperScan("com.example.demo.mapper")
 public class DemoApplication {
 /*
     //入口类注册Filter
